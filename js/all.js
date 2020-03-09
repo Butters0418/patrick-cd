@@ -3,7 +3,7 @@ $(function () {
   setTimeout(function () {
     $('.mask').fadeOut(300);
     bannerAni();
-  }, 400);
+  }, 500);
 
   var $scroll = $('.scroll');
   // banner Animation
