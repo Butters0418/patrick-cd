@@ -105,9 +105,8 @@ body {
 
 .section1__name {
   margin-bottom: 120px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  white-space: nowrap;
+  font-size: 0;
 }
 
 @media screen and (max-width: 720.98px) {
@@ -117,8 +116,9 @@ body {
 }
 
 .section1__name img {
-  display: block;
+  display: inline-block;
   width: 14.2%;
+  height: auto;
 }
 
 .section1__title {
@@ -268,64 +268,64 @@ body {
 
 .star1 {
   position: absolute;
-  top: 1.11381%;
-  left: 50.80761%;
+  top: -34.71731%;
+  left: 46.09592%;
   -webkit-animation-delay: -0.5s;
           animation-delay: -0.5s;
 }
 
 .star2 {
   position: absolute;
-  top: 33.23533%;
-  left: 24.38415%;
+  top: 27.05532%;
+  left: 12.65474%;
   -webkit-animation-delay: -1s;
           animation-delay: -1s;
 }
 
 .star3 {
   position: absolute;
-  top: -28.58029%;
-  left: 67.94228%;
+  top: 37.972%;
+  left: 3.9232%;
   -webkit-animation-delay: -1.5s;
           animation-delay: -1.5s;
 }
 
 .star4 {
   position: absolute;
-  top: 17.61123%;
-  left: 59.66221%;
+  top: -29.12473%;
+  left: 43.03369%;
   -webkit-animation-delay: -2s;
           animation-delay: -2s;
 }
 
 .star5 {
   position: absolute;
-  top: 2.18674%;
-  left: 28.05337%;
+  top: 6.22408%;
+  left: 10.97396%;
   -webkit-animation-delay: -2.5s;
           animation-delay: -2.5s;
 }
 
 .star6 {
   position: absolute;
-  top: -32.16389%;
-  left: 4.84345%;
+  top: -23.76048%;
+  left: 20.16659%;
   -webkit-animation-delay: -3s;
           animation-delay: -3s;
 }
 
 .star7 {
   position: absolute;
-  top: 6.68966%;
-  left: 81.69522%;
+  top: -18.82144%;
+  left: 13.47465%;
   -webkit-animation-delay: -3.5s;
           animation-delay: -3.5s;
 }
 
 .star8 {
   position: absolute;
-  top: -25.29065%;
-  left: 37.46276%;
+  top: 20.65961%;
+  left: 34.09378%;
   -webkit-animation-delay: -4s;
           animation-delay: -4s;
 }
@@ -376,8 +376,8 @@ body {
       opacity: 1;
     }
     0% {
-      -webkit-transform: translate(170px, 0);
-              transform: translate(170px, 0);
+      -webkit-transform: translate(190px, 0);
+              transform: translate(190px, 0);
     }
     100% {
       -webkit-transform: translate(0, 260px);
@@ -393,8 +393,8 @@ body {
       opacity: 1;
     }
     0% {
-      -webkit-transform: translate(170px, 0);
-              transform: translate(170px, 0);
+      -webkit-transform: translate(190px, 0);
+              transform: translate(190px, 0);
     }
     100% {
       -webkit-transform: translate(0, 260px);

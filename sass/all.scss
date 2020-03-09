@@ -1,0 +1,673 @@
+@import url("https://fonts.googleapis.com/earlyaccess/notosanstc.css");
+@import "init";
+img {
+  max-width: 100%;
+}
+a:focus,
+button:active,
+button:focus,
+area:active,
+area:focus {
+  box-shadow: none;
+  outline: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+body {
+  background-color: #e9e6f7;
+}
+.mask {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+}
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  @include media($pad) {
+    box-shadow: none;
+  }
+}
+//scroll icon
+.scroll {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  width: 10%;
+  max-width: 69px;
+  animation: scrollAni 1s infinite alternate;
+}
+@keyframes scrollAni {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(-50%, -20%);
+  }
+}
+.section1 {
+  background-image: url("../img/bg1.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1282px;
+  position: relative;
+  padding-top: 45px;
+  @include media($pad) {
+    padding-top: 6vw;
+    height: 178vw;
+  }
+  // patrick name
+  &__name {
+    margin-bottom: 120px;
+    white-space: nowrap;
+    font-size: 0;
+    @include media($pad) {
+      margin-bottom: 17vw;
+    }
+    img {
+      display: inline-block;
+      width: 14.2%;
+      height: auto;
+    }
+  }
+  // main title
+  &__title {
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 5;
+    opacity: 0;
+    transform: translateY(50px);
+    @include media($pad) {
+      margin-bottom: 7vw;
+    }
+  }
+  // describe
+  &__describe {
+    font-size: 1.5rem;
+    color: rgba(#fff, 0.7);
+    text-align: center;
+    letter-spacing: 8px;
+    line-height: 1.75;
+    position: relative;
+    z-index: 5;
+    opacity: 0;
+    transform: translateY(50px);
+    @include media($pad) {
+      font-size: 3.5vw;
+      letter-spacing: 1vw;
+    }
+  }
+  // 下方desert  & patrick img
+  &__desert {
+    position: absolute;
+    bottom: 0;
+    z-index: 8;
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  &__patrickimg {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  //moon cloud
+  .moon {
+    position: absolute;
+    right: 11%;
+    top: 11%;
+    z-index: 4;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: translateX(50px);
+    opacity: 0;
+    @include media($pad) {
+      width: 8vw;
+      height: 8vw;
+    }
+  }
+  .cloud1 {
+    position: absolute;
+    top: 6%;
+    right: 0;
+    z-index: 5;
+    width: 22%;
+    transform: translateX(100%);
+  }
+  .cloud2 {
+    position: absolute;
+    top: 36%;
+    left: 0;
+    z-index: 5;
+    width: 20%;
+    transform: translateX(-100%);
+  }
+  .cloud3 {
+    position: absolute;
+    top: 62%;
+    right: 0;
+    z-index: 15;
+    width: 56%;
+    transform: translateX(100%);
+  }
+}
+//流星
+.allstar {
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+[class^="star"] {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: rgba(#fff, 0.7);
+  animation: falling 3s infinite;
+  @include media($pad) {
+    animation: falling 4s infinite;
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 1px;
+    transform: translate(36px, -16px) rotate(-45deg);
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 0, 0, 0));
+  }
+}
+@for $i from 1 through 8 {
+  .star#{$i} {
+    $posX: random() * 85%;
+    $posY: random() * -80% + 40%;
+    position: absolute;
+    top: $posY;
+    left: $posX;
+    animation-delay: $i * -0.5s;
+  }
+}
+
+@keyframes falling {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  0% {
+    transform: translate(350px, 0);
+  }
+  100% {
+    transform: translate(0, 400px);
+  }
+}
+@include media($pad) {
+  @keyframes falling {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    70% {
+      opacity: 1;
+    }
+    0% {
+      transform: translate(190px, 0);
+    }
+    100% {
+      transform: translate(0, 260px);
+    }
+  }
+}
+//section2
+.section2 {
+  background-image: url("../img/bg2.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 270px 0 65px;
+  position: relative;
+  @include media($pad) {
+    padding: 38vw 0 11vw;
+  }
+  &__describe1 {
+    position: relative;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 5px;
+    line-height: 1.75;
+    margin-bottom: 190px;
+    @include media($pad) {
+      font-size: 3.5vw;
+      letter-spacing: 1vw;
+      margin-bottom: 25vw;
+    }
+    .first-quote {
+      position: absolute;
+      top: -15%;
+      left: 15%;
+      @include media($pad) {
+        left: 12%;
+      }
+    }
+    .last-quote {
+      position: absolute;
+      bottom: -20%;
+      right: 18%;
+      @include media($pad) {
+        right: 15%;
+      }
+    }
+  }
+  &__describe2 {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 3px;
+    line-height: 1.9;
+    margin-bottom: 0;
+    @include media($pad) {
+      font-size: 3.5vw;
+      letter-spacing: 1vw;
+      line-height: 1.8;
+    }
+  }
+  .cloud4 {
+    position: absolute;
+    right: 0;
+    top: 65%;
+    width: 28%;
+    z-index: 2;
+    opacity: 0.5;
+  }
+  .cloud5 {
+    position: absolute;
+    left: 0;
+    bottom: -3%;
+    width: 33%;
+    opacity: 0.5;
+  }
+}
+svg#circle1 {
+  position: absolute;
+  max-width: 100%;
+  top: 0;
+  left: -30%;
+}
+svg#circle2 {
+  position: absolute;
+  max-width: 100%;
+  top: 18%;
+  right: -29%;
+}
+svg.waves {
+  width: 720px;
+  position: relative;
+  width: 100%;
+  height: 145px;
+  margin-bottom: 60px;
+  // min-height: 40px;
+  // max-height: 200px;
+  @include media($pad) {
+    height: 25vw;
+    margin-bottom: 3vw;
+  }
+}
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -4s;
+  animation-duration: 4s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -7s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -2s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 12s;
+}
+.parallax > use:nth-child(5) {
+  animation-delay: -6s;
+  animation-duration: 5s;
+}
+.parallax > use:nth-child(6) {
+  animation-delay: -3s;
+  animation-duration: 15s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+//section3
+.section3 {
+  background-image: url("../img/bg3.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 60px;
+  @include media($pad) {
+    padding-bottom: 11vw;
+  }
+  &__line1 {
+    margin-bottom: 35px;
+    @include media($pad) {
+      margin-bottom: 5vw;
+    }
+  }
+  &__title {
+    margin-bottom: 25px;
+    @include media($pad) {
+      margin-bottom: 3.5vw;
+    }
+  }
+  &__describe {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 3px;
+    line-height: 1.9;
+    margin-bottom: 100px;
+    @include media($pad) {
+      font-size: 3.5vw;
+      letter-spacing: 1vw;
+      line-height: 1.8;
+      margin-bottom: 10vw;
+    }
+  }
+}
+//moon modal
+.moon__modal {
+  padding: 260px 0;
+  position: relative;
+
+  @include media($pad) {
+    padding: 38vw 0;
+  }
+  &--text {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 3px;
+    line-height: 1.9;
+    margin-bottom: 0;
+    @include media($pad) {
+      font-size: 3.5vw;
+      letter-spacing: 1vw;
+      line-height: 1.8;
+    }
+  }
+  &--btn {
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s;
+    img {
+      transition: 0.6s;
+    }
+    &:hover {
+      img {
+        transform: translateY(-8px);
+      }
+    }
+    &.modal1 {
+      top: -3%;
+      left: 50%;
+      transform: translate(-50%);
+      width: 24%;
+      @include media($pad) {
+        top: 0;
+      }
+    }
+    &.modal2 {
+      top: 17%;
+      right: 14%;
+      width: 15%;
+    }
+    &.modal3 {
+      top: 55%;
+      right: 14%;
+      width: 16%;
+    }
+    &.modal4 {
+      bottom: -3%;
+      left: 50%;
+      transform: translate(-50%);
+      width: 20%;
+    }
+    &.modal5 {
+      top: 55%;
+      left: 14%;
+      width: 18%;
+    }
+    &.modal6 {
+      top: 17%;
+      left: 13%;
+      width: 20%;
+    }
+  }
+}
+.section4 {
+  background-image: url("../img/bg4.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 55px;
+  padding-bottom: 50px;
+  border-bottom: 2px solid #5f5ac3;
+  @include media($pad) {
+    padding-top: 4vw;
+    padding-bottom: 7vw;
+  }
+  &__line2 {
+    margin-bottom: 55px;
+    @include media($pad) {
+      margin-bottom: 9vw;
+    }
+  }
+  &__describe1 {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 3px;
+    line-height: 1.9;
+    margin-bottom: 100px;
+    @include media($pad) {
+      font-size: 3.5vw;
+      letter-spacing: 1px;
+      line-height: 1.8;
+      margin-bottom: 12vw;
+    }
+  }
+  &__title {
+    margin-bottom: 20px;
+    @include media($pad) {
+      margin-bottom: 5vw;
+    }
+  }
+  &__describe2 {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 3px;
+    line-height: 1.9;
+    margin-bottom: 55px;
+    @include media($pad) {
+      font-size: 3.5vw;
+      letter-spacing: 1px;
+      line-height: 1.8;
+      margin-bottom: 6vw;
+    }
+  }
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 330px;
+  @include media($pad) {
+    margin-bottom: 50vw;
+  }
+}
+.form-group {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  position: relative;
+  @include media($pad) {
+    margin-bottom: 3vw;
+    padding-bottom: 6vw;
+  }
+  span {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    font-size: 1.25rem;
+    font-weight: 300a;
+    color: #fff100;
+    letter-spacing: 2px;
+    display: none;
+    @include media($pad) {
+      font-size: 3.5vw;
+    }
+  }
+  input {
+    border-radius: 15px;
+    font-size: 2rem;
+    height: 60px;
+    @include media($pad) {
+      font-size: 5vw;
+      height: 11vw;
+    }
+    &.error {
+      box-shadow: 0 0 0 2px #ee7469;
+    }
+  }
+  ::placeholder {
+    color: #000;
+    opacity: 0.3;
+  }
+}
+button#submit {
+  background-color: #ff7b71;
+  color: #fff;
+  padding: 5px 50px;
+  border-radius: 50px;
+  font-size: 2.5rem;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+  &:focus {
+    box-shadow: none;
+  }
+  @include media($pad) {
+    padding: 0.5vw 5vw;
+    border-radius: 5vw;
+    font-size: 5vw;
+  }
+  &.pointernone {
+    pointer-events: none;
+    background-color: #ccc;
+  }
+}
+
+//燈箱
+.modal-dialog {
+  max-width: 620px;
+}
+.modal-content {
+  border: none;
+  border-radius: 20px;
+}
+.modal-header {
+  align-items: center;
+  border: none;
+  padding-bottom: 0;
+  button {
+    opacity: 1;
+  }
+  span {
+    display: block;
+    background-color: #7d79d1;
+    color: #fff;
+    padding: 10px;
+    font-size: 2rem;
+    border-radius: 100px;
+    @include media($pad) {
+      font-size: 7vw;
+      padding: 1vw;
+    }
+  }
+  .title {
+    color: #514cad;
+    font-size: 2rem;
+    margin-bottom: 0;
+    letter-spacing: 3px;
+    @include media($pad) {
+      font-size: 6vw;
+    }
+  }
+}
+.modal-body {
+  border: none;
+  p {
+    color: #514cad;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    line-height: 1.7;
+    margin-top: 15px;
+    margin-bottom: 0;
+    @include media($pad) {
+      font-size: 4vw;
+      letter-spacing: 1px;
+    }
+  }
+}
+#formsubmit {
+  .modal-body {
+    padding-top: 0;
+    p {
+      font-size: 1.3rem;
+      @include media($pad) {
+        font-size: 4vw;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
