@@ -17,10 +17,11 @@
 <body>
   <div class="main">
     <!-- 參考 -->
-    <!-- <img class="scroll" src="img/scroll.png"> -->
-    <!-- <img class="see" src="img/see.jpg"> -->
+    <div class="mask"></div>
+    <img class="scroll" src="img/scroll.png">
     <section class="section1">
       <!-- patrick text -->
+      <div class="allstar"></div>
       <div class="section1__name">
         <img src="img/patrick_01.png">
         <img src="img/patrick_02.png">
@@ -43,14 +44,14 @@
       <!-- moon -->
       <div class="moon"></div>
       <!-- cloud -->
-      <img class="cloud1" src="img/cloud1.png">
-      <img class="cloud2" src="img/cloud2.png">
-      <img class="cloud3" src="img/cloud3.png">
+      <img class="cloud cloud1" src="img/cloud1.png">
+      <img class="cloud cloud2" src="img/cloud2.png">
+      <img class="cloud cloud3" src="img/cloud3.png">
     </section>
     <!-- END section1 -->
     <section class="section2">
       <!-- describe1 -->
-      <p class="section2__describe1"><span class="first-quote">“</span>嗨，歡迎來到阿斑的腦內空間。<br>
+      <p class="section2__describe1 fade_up"><span class="first-quote">“</span>嗨，歡迎來到阿斑的腦內空間。<br>
         這裡藏有連結現實世界的通道，<br>
         期望能與你一同探究。<span class="last-quote">”</span></p>
       <!-- circle1 -->
@@ -87,7 +88,7 @@
         </g>
       </svg>
       <!-- describe2 -->
-      <p class="section2__describe2">
+      <p class="section2__describe2 fade_up">
         人生像個圓形時區，<br>
         愛情一部分、生活一部分、家庭一部分。<br>
         隨著日月升起、星辰殞落，<br>
@@ -98,107 +99,196 @@
         做好準備邁向下一個時區。<br>
         而你，準備好了嗎？
       </p>
-      <img class="cloud4" src="img/cloud4.png">
-      <img class="cloud5" src="img/cloud5.png">
+      <img class="cloud4 fade_right" src="img/cloud4.png">
+      <img class="cloud5 fade_left" src="img/cloud5.png">
     </section>
     <!-- END section2 -->
     <section class="section3">
-      <div class="section3__line1">
+      <div class="section3__line1 fade_up">
         <img src="img/line1.png">
       </div>
-      <img class="section3__title" src="img/section3_title.png" alt="與你分享生活中的每段風景 來場屬於我們的回憶 ">
-      <p class="section3__describe">用六首作品紀錄下人生的三分之一，<br>
+      <img class="section3__title fade_up" src="img/section3_title.png" alt="與你分享生活中的每段風景 來場屬於我們的回憶 ">
+      <p class="section3__describe fade_up">用六首作品紀錄下人生的三分之一，<br>
         寫下專屬的溫度與故事，<br>
         而你將會是新的篇章。<br><br>
         現在，我想邀請你一起重溫故事的細節。
       </p>
       <!-- moon modal-->
-      <div class="moon__modal">
+      <div class="moon__modal fade_up">
         <p class="moon__modal--text">點擊月亮看看吧!</p>
-        <div class="moon__modal--btn modal1"><img src="img/moon1.png"></div>
-        <div class="moon__modal--btn modal2"><img src="img/moon2.png"></div>
-        <div class="moon__modal--btn modal3"><img src="img/moon3.png"></div>
-        <div class="moon__modal--btn modal4"><img src="img/moon4.png"></div>
-        <div class="moon__modal--btn modal5"><img src="img/moon5.png"></div>
-        <div class="moon__modal--btn modal6"><img src="img/moon6.png"></div>
+        <div class="moon__modal--btn modal1" data-toggle="modal" data-target="#moon1"><img src="img/moon1.png"></div>
+        <div class="moon__modal--btn modal2" data-toggle="modal" data-target="#moon2"><img src="img/moon2.png"></div>
+        <div class="moon__modal--btn modal3" data-toggle="modal" data-target="#moon3"><img src="img/moon3.png"></div>
+        <div class="moon__modal--btn modal4" data-toggle="modal" data-target="#moon4"><img src="img/moon4.png"></div>
+        <div class="moon__modal--btn modal5" data-toggle="modal" data-target="#moon5"><img src="img/moon5.png"></div>
+        <div class="moon__modal--btn modal6" data-toggle="modal" data-target="#moon6"><img src="img/moon6.png"></div>
       </div>
     </section>
     <!-- END section3 -->
     <section class="section4">
-      <div class="section4__line2">
+      <div class="section4__line2 fade_up">
         <img src="img/line2.png">
       </div>
-      <p class="section4__describe1">接下來我會開啟現實與網路連結的通道，<br>
+      <p class="section4__describe1 fade_up">接下來我會開啟現實與網路連結的通道，<br>
         地點會在台北的某個角落，<br>
         在那天，我們可以一起唱唱歌、聊聊天；<br>
         我們可以有一些互動，就像朋友一般；<br>
         最重要的是，<br>
         我們可以一起沉浸在音樂裡，享受一段愜意的時光。
       </p>
-      <img class="section4__title" src="img/section4_title.png">
-      <p class="section4__describe2">
+      <img class="section4__title fade_up" src="img/section4_title.png">
+      <p class="section4__describe2 fade_up">
         活動每場限定25人，歡迎報名填寫呦!<br>
         期待與你相見的那一天！
       </p>
       <!-- 表單 -->
       <div class="form" id="goactive">
-        <div class="form-group col-9">
+        <div class="form-group col-9 fade_up">
           <input type="text" class="form-control form-control-lg" id="yourname" placeholder="姓名">
         </div>
-        <div class="form-group col-9">
+        <div class="form-group col-9 fade_up">
           <input type="tel" class="form-control form-control-lg" id="yourphone" placeholder="電話">
         </div>
-        <div class="form-group col-9">
+        <div class="form-group col-9 fade_up">
           <input type="email" class="form-control form-control-lg" id="yourmail" placeholder="E-MAIL">
         </div>
-        <button class="btn btn-primary" id="submit">送出</button>
+        <button class="btn btn-primary fade_up" id="submit">送出</button>
       </div>
       <!-- footer標語 -->
-      <img src="img/footertext.png" alt="">
+      <img src="img/footertext.png">
     </section>
+  </div>
+  <!-- END main -->
 
+
+  <!-- modal -->
+  <!-- moon modal1 -->
+  <div class="modal fade" id="moon1" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="title">01.兇手</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/CUDCLCuM4Dk" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p>太多的謊言踐踏真誠，讓人與人之間的信任回到原點，努力的掙扎向前，不進反退又換來一身傷痕。
+            被傷透後選擇封閉內心，拒絕接受外在的一切目光，逃避會讓自己受傷的一切，最後選擇關起門來，自己療傷。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- moon modal2 -->
+  <div class="modal fade" id="moon2" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="title">02.靜靜</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/o7a_99Y1lTw" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p>遇見妳，是我的起點。<br>
+            在遇見妳之前，我是無根的浮萍，世界的物換星移都是過客；與妳相遇後，每一秒都值得眷戀，只要牽妳的手，時間便有了存在的意義。生活恬淡，歲月靜好，想在陽光灑落的午後，靜靜地和妳走慢時光。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- moon modal3 -->
+  <div class="modal fade" id="moon3" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="title">03.Let you know</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8dFJJo0G4_M" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p>想妳、牽妳、擁抱妳，都是為了讓妳懂得。<br>
+            愛情就像童話故事，情節讓人甜膩沉迷，妳的一舉一動、一顰一笑都是甜蜜夢幻的美好，想要整個世界都是妳。想起妳的模樣會偷笑、決定與妳廝守到老，在執子之手的時光裡，想好好擁抱妳，讓妳知道。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- moon modal4 -->
+  <div class="modal fade" id="moon4" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="title">04.催淚瓦斯</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="img/modal-4.png">
+          <p>在一起需要兩人點頭，分手卻只要一人同意。<br>
+            一起歡笑的日常都收在腦海裡，過去的點滴依附在照片訊息，剩我用難過一一清點，醉倒空蕩的房間角落。失去妳，世界有了缺口，任憑我自己無助地回頭。妳的淚像是催淚瓦斯，擋下我想重溫往日的腳步。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- moon modal5 -->
+  <div class="modal fade" id="moon5" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="title">05.Lose my way</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="img/modal-5.png">
+          <p>走不出迴圈，或許是遵循了錯誤的解答。<br>
+            試著在失戀後找到出口，藉著思念排解受傷後的空虛寂寞。我徘徊在回憶的交叉路口，尋找著蛛絲馬跡想找到盡頭，卻發現走不出迴圈。原來不是我被丟棄在迷宮，原來是妳的謊指引了錯誤方向。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- moon modal6 -->
+  <div class="modal fade" id="moon6" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="title">06.人生中遇到的美景</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wKTj0HIb_vk" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p>感謝自己，讓我能夠走到這裡。<br>
+            擦肩而過的人事物都濃縮成一張薄紙，深刻的都留在回憶。世界上有太多坎坷，一路走來遇到太多曲折，縱使曾經迷途手足無措，路上受過的傷都是成長的痕跡，回頭望去，感謝色彩濃重的每一筆回憶。</p>
+        </div>
+      </div>
+    </div>
   </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.5/scrollreveal.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js'></script>
-  <script>
-    // circle1
-
-    var svg1 = document.getElementById("circle1");
-    var s1 = Snap(svg1);
-    var s1state1 = Snap.select('#s1state1');
-    var s1state2 = Snap.select('#s1state2');
-    var s1state1Points = s1state1.node.getAttribute('d');
-    var s1state2Points = s1state2.node.getAttribute('d');
-    var s1toState2 = function () {
-      s1state1.animate({ d: s1state2Points }, 3000, s1toState1);
-    }
-    var s1toState1 = function () {
-      s1state1.animate({ d: s1state1Points }, 3000, s1toState2);
-    }
-    s1toState2();
-    gsap.to(svg1, { duration: 6, y: 50, repeat: -1, yoyo: true, ease: "none" })
-    gsap.to(svg1, { duration: 30, rotate: 360, repeat: -1, ease: "none" })
-
-
-    var svg2 = document.getElementById("circle2");
-    var s2 = Snap(svg2);
-    var s2state1 = Snap.select('#s2state1');
-    var s2state2 = Snap.select('#s2state2');
-    var s2state1Points = s2state1.node.getAttribute('d');
-    var s2state2Points = s2state2.node.getAttribute('d');
-    var s2toState2 = function () {
-      s2state1.animate({ d: s2state2Points }, 3000, s2toState1);
-    }
-    var s2toState1 = function () {
-      s2state1.animate({ d: s2state1Points }, 3000, s2toState2);
-    }
-    s2toState2();
-    gsap.to(svg2, { duration: 6, y: -30, x: 30, repeat: -1, yoyo: true, ease: "none" })
-    gsap.to(svg2, { duration: 20, rotate: 360, repeat: -1, ease: "none" })
-  </script>
+  <script src="js/all.js"></script>
 </body>
 
 </html>
