@@ -268,64 +268,64 @@ body {
 
 .star1 {
   position: absolute;
-  top: -26.72223%;
-  left: 58.65594%;
+  top: 1.11381%;
+  left: 50.80761%;
   -webkit-animation-delay: -0.5s;
           animation-delay: -0.5s;
 }
 
 .star2 {
   position: absolute;
-  top: 31.74988%;
-  left: 15.86052%;
+  top: 33.23533%;
+  left: 24.38415%;
   -webkit-animation-delay: -1s;
           animation-delay: -1s;
 }
 
 .star3 {
   position: absolute;
-  top: 16.82581%;
-  left: 16.4352%;
+  top: -28.58029%;
+  left: 67.94228%;
   -webkit-animation-delay: -1.5s;
           animation-delay: -1.5s;
 }
 
 .star4 {
   position: absolute;
-  top: -8.90978%;
-  left: 84.3501%;
+  top: 17.61123%;
+  left: 59.66221%;
   -webkit-animation-delay: -2s;
           animation-delay: -2s;
 }
 
 .star5 {
   position: absolute;
-  top: -18.4421%;
-  left: 29.32209%;
+  top: 2.18674%;
+  left: 28.05337%;
   -webkit-animation-delay: -2.5s;
           animation-delay: -2.5s;
 }
 
 .star6 {
   position: absolute;
-  top: 20.55433%;
-  left: 66.51093%;
+  top: -32.16389%;
+  left: 4.84345%;
   -webkit-animation-delay: -3s;
           animation-delay: -3s;
 }
 
 .star7 {
   position: absolute;
-  top: 4.30448%;
-  left: 37.50881%;
+  top: 6.68966%;
+  left: 81.69522%;
   -webkit-animation-delay: -3.5s;
           animation-delay: -3.5s;
 }
 
 .star8 {
   position: absolute;
-  top: 5.5237%;
-  left: 64.66986%;
+  top: -25.29065%;
+  left: 37.46276%;
   -webkit-animation-delay: -4s;
           animation-delay: -4s;
 }
@@ -679,6 +679,16 @@ svg.waves {
   transition: 0.3s;
 }
 
+.moon__modal--btn img {
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.moon__modal--btn:hover img {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+}
+
 .moon__modal--btn.modal1 {
   top: -3%;
   left: 50%;
@@ -822,12 +832,32 @@ svg.waves {
 }
 
 .form-group {
-  margin-bottom: 70px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  position: relative;
 }
 
 @media screen and (max-width: 720.98px) {
   .form-group {
-    margin-bottom: 7vw;
+    margin-bottom: 3vw;
+    padding-bottom: 6vw;
+  }
+}
+
+.form-group span {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  font-size: 1.25rem;
+  font-weight: 300a;
+  color: #fff100;
+  letter-spacing: 2px;
+  display: none;
+}
+
+@media screen and (max-width: 720.98px) {
+  .form-group span {
+    font-size: 3.5vw;
   }
 }
 
@@ -842,6 +872,11 @@ svg.waves {
     font-size: 5vw;
     height: 11vw;
   }
+}
+
+.form-group input.error {
+  -webkit-box-shadow: 0 0 0 2px #ee7469;
+          box-shadow: 0 0 0 2px #ee7469;
 }
 
 .form-group ::-webkit-input-placeholder {
@@ -871,6 +906,14 @@ button#submit {
   border-radius: 50px;
   font-size: 2.5rem;
   border: none;
+  outline: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+button#submit:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 @media screen and (max-width: 720.98px) {
@@ -879,6 +922,11 @@ button#submit {
     border-radius: 5vw;
     font-size: 5vw;
   }
+}
+
+button#submit.pointernone {
+  pointer-events: none;
+  background-color: #ccc;
 }
 
 .modal-dialog {
@@ -946,6 +994,21 @@ button#submit {
 
 @media screen and (max-width: 720.98px) {
   .modal-body p {
+    font-size: 4vw;
+    letter-spacing: 1px;
+  }
+}
+
+#formsubmit .modal-body {
+  padding-top: 0;
+}
+
+#formsubmit .modal-body p {
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 720.98px) {
+  #formsubmit .modal-body p {
     font-size: 4vw;
     letter-spacing: 1px;
   }

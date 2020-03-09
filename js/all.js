@@ -1,4 +1,10 @@
 $(function () {
+  //remove mask
+  setTimeout(function () {
+    $('.mask').fadeOut(300);
+    bannerAni();
+  }, 400);
+
   var $scroll = $('.scroll');
   // banner Animation
   function bannerAni() {
@@ -9,7 +15,6 @@ $(function () {
     var $moon = $('.moon');
     var tl = gsap.timeline();
     var $patrickText = $('.section1__name img');
-
     tl.to($desert, { duration: 0.4, opacity: 1, y: 0 })
       .to($patrickImg, { duration: 1.5, opacity: 1, x: 0, ease: "power4.out" }, 0.4)
       .to($title, { duration: 1, opacity: 1, y: 0, ease: "power3.out" }, 0.8)
@@ -28,10 +33,6 @@ $(function () {
       }, 1.1)
       .from($scroll, { duration: 0.5, opacity: 0 }, 2.1)
   }
-  setTimeout(function () {
-    $('.mask').fadeOut();
-    bannerAni();
-  }, 200);
 
 
 
@@ -84,6 +85,42 @@ $(function () {
   gsap.to(svg2, { duration: 6, y: -30, x: 30, repeat: -1, yoyo: true, ease: "none" })
   gsap.to(svg2, { duration: 20, rotate: 360, repeat: -1, ease: "none" })
 
+
+
+  // line draw
+  function drawline1() {
+    var line1 = Snap('#line1');
+    var path = line1.paper.path({ d: 'M.92,132.69s349-137,409-102c25,20-32,43-4,68s125,17,315-96', stroke: '#fff100', fill: 'rgba(0,0,0,0)' });
+    var length = Snap.path.getTotalLength(path);
+    path.attr({
+      'stroke-dashoffset': length,
+      'stroke-dasharray': length  // 用Snap的API计算复杂的path长度
+    });
+    Snap.animate(length, 0, function (val) {
+      path.attr({
+        'stroke-dashoffset': val
+      });
+    }, 600, mina.easeout(), function () {
+      console.log('animation end');
+    });
+  }
+  function drawline2() {
+    var line2 = Snap('#line2');
+    var path = line2.paper.path({ d: 'M-.5,26.5s97-21,172-22,122,0,163,26,53,30,63,24-12-28-59-15-43,36,1,22,56-31,106-31,80,26,163,30,112-21,112-21', stroke: '#fff100', fill: 'rgba(0,0,0,0)' });
+    var length = Snap.path.getTotalLength(path);
+    path.attr({
+      'stroke-dashoffset': length,
+      'stroke-dasharray': length  // 用Snap的API计算复杂的path长度
+    });
+    Snap.animate(length, 0, function (val) {
+      path.attr({
+        'stroke-dashoffset': val
+      });
+    }, 900, mina.easeout(), function () {
+      console.log('animation end');
+    });
+  }
+
   // scroll reveal
   var rate = 1;
   if ($(window).width() > 721) {
@@ -92,9 +129,47 @@ $(function () {
     rate = 0.6
   }
   window.sr = ScrollReveal({ viewOffset: { bottom: 150 * rate }, duration: 1000, delay: 100 });
-  // 自定義一個動畫集合
   sr.reveal('.fade_up', { origin: 'bottom', distance: '40px', });
   sr.reveal('.fade_left', { origin: 'left', distance: '40px', });
   sr.reveal('.fade_right', { origin: 'right', distance: '40px', });
+  sr.reveal('.section3__line1', { origin: 'bottom', distance: '40px', duration: 500, delay: 0, afterReveal: drawline1 });
+  sr.reveal('.section4__line2', { origin: 'bottom', distance: '40px', duration: 500, dealy: 0, afterReveal: drawline2 });
+
+  // form submit
+  $('#submit').on('click', function () {
+    var name = $('#yourname').val().trim();
+    var phone = $('#yourphone').val().trim();
+    var mail = $('#yourmail').val().trim();
+    // css class
+    $('input').each(function () {
+      if ($(this).val().trim() == "") {
+        $(this).val("");
+        $(this).addClass('error').next().fadeIn(300);
+      }
+    })
+    if (name !== "" && phone !== "" && mail !== "") {
+      var data = {
+        'entry.858747686': name,
+        'entry.1623726128': phone,
+        'entry.2009452488': mail,
+      };
+      $.ajax({
+        type: 'POST',
+        url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdD6znoLqn4eIRQoHW_mclaOuntNqRXd9PttntvF7CMo1PJmA/formResponse',
+        data: data,
+        contentType: 'application/json',
+        dataType: 'jsonp',
+        complete: function () {
+          $('#submit').addClass('pointernone')
+          $('#formsubmit').modal('show');
+        }
+      })
+    }
+    // post
+  });
+  //if keydown
+  $('input').on('keydown', function () {
+    $(this).removeClass('error').next().fadeOut(500);
+  })
 
 })

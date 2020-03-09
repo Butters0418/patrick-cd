@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="Keywords" content="歌手、專輯、PATRICK" />
-  <meta name="Description" content="人生中遇到的美景，用六首作品紀錄下人生的三分之一，" />
+  <meta name="Description" content="人生中遇到的美景，用六首作品紀錄下人生的三分之一" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>PATRICK 人生中遇到的美景</title>
   <link tpye="text/css" rel='stylesheet'
@@ -104,8 +104,8 @@
     </section>
     <!-- END section2 -->
     <section class="section3">
-      <div class="section3__line1 fade_up">
-        <img src="img/line1.png">
+      <div class="section3__line1">
+        <svg id="line1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 130"></svg>
       </div>
       <img class="section3__title fade_up" src="img/section3_title.png" alt="與你分享生活中的每段風景 來場屬於我們的回憶 ">
       <p class="section3__describe fade_up">用六首作品紀錄下人生的三分之一，<br>
@@ -126,8 +126,8 @@
     </section>
     <!-- END section3 -->
     <section class="section4">
-      <div class="section4__line2 fade_up">
-        <img src="img/line2.png">
+      <div class="section4__line2 ">
+        <svg id="line2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 70"></svg>
       </div>
       <p class="section4__describe1 fade_up">接下來我會開啟現實與網路連結的通道，<br>
         地點會在台北的某個角落，<br>
@@ -145,14 +145,17 @@
       <div class="form" id="goactive">
         <div class="form-group col-9 fade_up">
           <input type="text" class="form-control form-control-lg" id="yourname" placeholder="姓名">
+          <span>*請填寫您的姓名</span>
         </div>
         <div class="form-group col-9 fade_up">
           <input type="tel" class="form-control form-control-lg" id="yourphone" placeholder="電話">
+          <span>*請填寫您的電話</span>
         </div>
         <div class="form-group col-9 fade_up">
           <input type="email" class="form-control form-control-lg" id="yourmail" placeholder="E-MAIL">
+          <span>*請填寫您的E-MAIL</span>
         </div>
-        <button class="btn btn-primary fade_up" id="submit">送出</button>
+        <button class="btn fade_up" id="submit">送出</button>
       </div>
       <!-- footer標語 -->
       <img src="img/footertext.png">
@@ -278,6 +281,23 @@
           </div>
           <p>感謝自己，讓我能夠走到這裡。<br>
             擦肩而過的人事物都濃縮成一張薄紙，深刻的都留在回憶。世界上有太多坎坷，一路走來遇到太多曲折，縱使曾經迷途手足無措，路上受過的傷都是成長的痕跡，回頭望去，感謝色彩濃重的每一筆回憶。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- form success -->
+  <div class="modal fade" id="formsubmit" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="title">表單已送出!</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>感謝您的參與。<br>報名完成通過審核後，活動時間地點等詳情將透過E-mail通知，
+            如有任何歡迎來信至lulu@banfubi.com詢問</p>
         </div>
       </div>
     </div>
