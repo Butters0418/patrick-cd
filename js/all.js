@@ -30,6 +30,7 @@ $(function () {
     var $moon = $('.moon');
     var tl = gsap.timeline();
     var $patrickText = $('.section1__name img');
+    gsap.set($patrickText, { opacity: 1 })
     tl.to($desert, { duration: 0.4, opacity: 1, y: 0 })
       .to($patrickImg, { duration: 1.5, opacity: 1, x: 0, ease: "power4.out" }, 0.4)
       .to($title, { duration: 1, opacity: 1, y: 0, ease: "power3.out" }, 0.8)
@@ -46,7 +47,7 @@ $(function () {
         rotationY: "random(-540,540)",
         ease: "power3.out"
       }, 1.1)
-      .from($scroll, { duration: 0.5, opacity: 0 }, 2.1)
+      .from($scroll, { duration: 0.5, opacity: 0 }, 2.1);
   }
 
 

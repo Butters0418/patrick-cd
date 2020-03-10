@@ -119,6 +119,7 @@ body {
   display: inline-block;
   width: 14.2%;
   height: auto;
+  opacity: 0;
 }
 
 .section1__title {
@@ -268,64 +269,64 @@ body {
 
 .star1 {
   position: absolute;
-  top: -17.47571%;
-  left: 0.17496%;
+  top: -35.00184%;
+  left: 35.55021%;
   -webkit-animation-delay: -0.5s;
           animation-delay: -0.5s;
 }
 
 .star2 {
   position: absolute;
-  top: -21.71877%;
-  left: 31.76826%;
+  top: 30.0991%;
+  left: 78.56313%;
   -webkit-animation-delay: -1s;
           animation-delay: -1s;
 }
 
 .star3 {
   position: absolute;
-  top: -38.74167%;
-  left: 71.4111%;
+  top: -11.17421%;
+  left: 78.61369%;
   -webkit-animation-delay: -1.5s;
           animation-delay: -1.5s;
 }
 
 .star4 {
   position: absolute;
-  top: -2.24522%;
-  left: 46.55663%;
+  top: 24.38872%;
+  left: 67.49092%;
   -webkit-animation-delay: -2s;
           animation-delay: -2s;
 }
 
 .star5 {
   position: absolute;
-  top: -6.45743%;
-  left: 50.99284%;
+  top: 34.72717%;
+  left: 27.11604%;
   -webkit-animation-delay: -2.5s;
           animation-delay: -2.5s;
 }
 
 .star6 {
   position: absolute;
-  top: 0.05125%;
-  left: 73.21026%;
+  top: 25.72437%;
+  left: 33.86744%;
   -webkit-animation-delay: -3s;
           animation-delay: -3s;
 }
 
 .star7 {
   position: absolute;
-  top: -11.82357%;
-  left: 40.11917%;
+  top: 25.61535%;
+  left: 3.10226%;
   -webkit-animation-delay: -3.5s;
           animation-delay: -3.5s;
 }
 
 .star8 {
   position: absolute;
-  top: 32.22144%;
-  left: 47.50051%;
+  top: -38.5389%;
+  left: 12.4554%;
   -webkit-animation-delay: -4s;
           animation-delay: -4s;
 }
