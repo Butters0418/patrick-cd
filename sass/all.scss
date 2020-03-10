@@ -16,8 +16,8 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 }
 body {
   background-color: #e9e6f7;
@@ -200,11 +200,7 @@ body {
     width: 40px;
     height: 1px;
     transform: translate(36px, -16px) rotate(-45deg);
-    background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 1),
-      rgba(255, 0, 0, 0)
-    );
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 0, 0, 0));
   }
 }
 @for $i from 1 through 8 {
@@ -422,7 +418,6 @@ svg.waves {
 .moon__modal {
   padding: 260px 0;
   position: relative;
-
   @include media($pad) {
     padding: 38vw 0;
   }
@@ -442,50 +437,74 @@ svg.waves {
   &--btn {
     position: absolute;
     cursor: pointer;
-    transition: 0.3s;
     img {
-      transition: 0.6s;
+      animation: moonjump 1s infinite alternate;
     }
     &:hover {
-      img {
-        transform: translateY(-8px);
-      }
+      animation-play-state: paused;
     }
     &.modal1 {
       top: -3%;
       left: 50%;
       transform: translate(-50%);
       width: 24%;
+
       @include media($pad) {
         top: 0;
+      }
+      img {
+        animation-delay: 0;
       }
     }
     &.modal2 {
       top: 17%;
       right: 14%;
       width: 15%;
+      img {
+        animation-delay: 0.1s;
+      }
     }
     &.modal3 {
       top: 55%;
       right: 14%;
       width: 16%;
+      img {
+        animation-delay: 0.2s;
+      }
     }
     &.modal4 {
       bottom: -3%;
       left: 50%;
       transform: translate(-50%);
       width: 20%;
+      img {
+        animation-delay: 0.3s;
+      }
     }
     &.modal5 {
       top: 55%;
       left: 14%;
       width: 18%;
+      img {
+        animation-delay: 0.4s;
+      }
     }
     &.modal6 {
       top: 17%;
       left: 13%;
       width: 20%;
+      img {
+        animation-delay: 0.5s;
+      }
     }
+  }
+}
+@keyframes moonjump {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-10%);
   }
 }
 .section4 {

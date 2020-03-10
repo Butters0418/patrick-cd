@@ -13,12 +13,23 @@ $(function () {
     counter++;
     if (counter === len) {
       console.log('All img load')
+    }
+  }
+  var loadingtime = 3000;
+  function countDown() {
+    console.log(loadingtime)
+    loadingtime -= 500
+    if (loadingtime < 0 || counter === len) {
+      clearInterval(timer);
       $('.mask').fadeOut(300);
       setTimeout(function () {
         bannerAni();
-      }, 500);
+      }, 800);
     }
   }
+  var timer = setInterval(countDown, 500);
+
+
 
   var $scroll = $('.scroll');
   // banner Animation
@@ -151,6 +162,7 @@ $(function () {
   sr.reveal('.section3__line1', { origin: 'bottom', distance: '40px', duration: 500, delay: 0, afterReveal: drawline1 });
   sr.reveal('.section4__line2', { origin: 'bottom', distance: '40px', duration: 500, dealy: 0, afterReveal: drawline2 });
 
+  //moon jump 
   // form submit
   $('#submit').on('click', function () {
     var name = $('#yourname').val().trim();
