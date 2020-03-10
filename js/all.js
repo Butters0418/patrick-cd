@@ -1,9 +1,24 @@
 $(function () {
-  //remove mask
-  setTimeout(function () {
-    $('.mask').fadeOut(300);
-    bannerAni();
-  }, 500);
+
+  var imgs = document.images,
+    len = imgs.length,
+    counter = 0;
+  [].forEach.call(imgs, function (img) {
+    if (img.complete)
+      incrementCounter();
+    else
+      img.addEventListener('load', incrementCounter, false);
+  });
+  function incrementCounter() {
+    counter++;
+    if (counter === len) {
+      console.log('All img load')
+      $('.mask').fadeOut(300);
+      setTimeout(function () {
+        bannerAni();
+      }, 500);
+    }
+  }
 
   var $scroll = $('.scroll');
   // banner Animation
@@ -94,7 +109,7 @@ $(function () {
     var length = Snap.path.getTotalLength(path);
     path.attr({
       'stroke-dashoffset': length,
-      'stroke-dasharray': length  // 用Snap的API计算复杂的path长度
+      'stroke-dasharray': length
     });
     Snap.animate(length, 0, function (val) {
       path.attr({
@@ -110,7 +125,7 @@ $(function () {
     var length = Snap.path.getTotalLength(path);
     path.attr({
       'stroke-dashoffset': length,
-      'stroke-dasharray': length  // 用Snap的API计算复杂的path长度
+      'stroke-dasharray': length
     });
     Snap.animate(length, 0, function (val) {
       path.attr({
