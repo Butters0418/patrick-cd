@@ -308,7 +308,7 @@ body {
 .star5 {
   position: absolute;
   top: 16.16031%;
-  left: 2.75654%;
+  left: -10.75654%;
   -webkit-animation-delay: -2.5s;
   animation-delay: -2.5s;
 }
@@ -332,7 +332,7 @@ body {
 .star8 {
   position: absolute;
   top: -30.52984%;
-  left: 14.8002%;
+  left: 5.8002%;
   -webkit-animation-delay: -4s;
   animation-delay: -4s;
 }
