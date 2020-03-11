@@ -42,7 +42,7 @@ $(function () {
     var tl = gsap.timeline();
     var $patrickText = $('.section1__name img');
     gsap.set($patrickText, { opacity: 1 })
-    tl.to($desert, { duration: 0.4, opacity: 1, y: 0 })
+    tl.to($desert, { duration: 0.5, opacity: 1 })
       .to($patrickImg, { duration: 1.5, opacity: 1, x: 0, ease: "power4.out" }, 0.4)
       .to($title, { duration: 1, opacity: 1, y: 0, ease: "power3.out" }, 0.8)
       .to($describe, { duration: 1, opacity: 1, y: 0, ease: "power3.out" }, 1)
